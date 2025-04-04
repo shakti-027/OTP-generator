@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Authenticate OTP Generator</h1>
+      <div id="box"></div>
+      <button onclick="generate()">Generate otp</button>
+    </div>
+
+    <script>
+
+      function generate() {
+        const code = document.getElementById("box");
+        const otp = Math.floor( Math.random() * 1000000).toString();
+      //it will always give 6 Digit code
+      while (otp.length < 6) {
+      otp = "0" + otp; 
+    }
+    code.innerHTML = otp;
+  }
+    </script>
+    
+  </body>
+</html>
